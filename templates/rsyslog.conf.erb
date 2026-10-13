@@ -64,7 +64,7 @@ $FileCreateMode <%= scope.lookupvar('rsyslog::perm_file') %>
 $DirOwner <%= scope.lookupvar('rsyslog::log_user') %>
 $DirGroup <%= scope.lookupvar('rsyslog::log_group') %>
 $DirCreateMode <%= scope.lookupvar('rsyslog::perm_dir') %>
-<% if @operatingsystem == "Ubuntu" -%>
+<% if @facts['os']['name'] == "Ubuntu" -%>
 # Debian, Ubuntu
 $PrivDropToUser root
 <% else -%>

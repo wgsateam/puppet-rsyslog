@@ -11,7 +11,7 @@
 #  class { 'rsyslog::service': }
 #
 class rsyslog::service {
-  if $::operatingsystem == "Solaris" {
+  if $facts['os']['name'] == "Solaris" {
     service { 'svc:/system/system-log:default':
       ensure  => stopped,
       enable  => false,
